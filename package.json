@@ -1,0 +1,33 @@
+{
+  "name": "block-explorer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --mode development --hot"
+  },
+  "author": "nagaraj",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "google-protobuf": "^3.15.7",
+    "grpc": "^1.24.6",
+    "grpc-web": "^1.2.1",
+    "protoc-gen-grpc-web": "^1.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.13.13",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.0",
+    "file-loader": "^6.2.0",
+    "saas": "^1.0.0",
+    "sass-loader": "^11.0.1",
+    "webpack": "^5.30.0",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
