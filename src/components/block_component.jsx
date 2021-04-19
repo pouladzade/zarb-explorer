@@ -13,15 +13,19 @@ const client = new ZarbClient("http://localhost:8090", null, null);
 function BlockchainInfo() {
   const [post, setPost] = useState([]);
   const getBlockchaininfo = () => {
-    var validatorRequest = new ValidatorsRequest();
-    client.getBlockchainInfo(validatorRequest, null, function (err, response) {
-      if (err) {
-        console.log("the value in pong", err);
-      } else {
-        let result = response.toObject();
-        setPost(result.validatorsList);
+    var blockRequest = new BlockchainInfoRequest();
+    client.getBlockchainInfo(
+      BlockchainInfoRequest,
+      null,
+      function (err, response) {
+        if (err) {
+          console.log("the value in pong", err);
+        } else {
+          let result = response.toObject();
+          setPost(result.blockRequest);
+        }
       }
-    });
+    );
   };
   useEffect(() => {
     const interval = setInterval(() => getBlockchaininfo(), 3000);

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ReactDom from "react-dom";
 import MUIDataTable from "mui-datatables";
-import { GrpcWebClientBase } from "grpc-web";
 import { ZarbClient } from "../../proto/zarb_grpc_web_pb";
-import { ValidatorsRequest, ValidatorResponse } from "../../proto/zarb_pb.js";
+import { ValidatorsRequest } from "../../proto/zarb_pb.js";
 
 const client = new ZarbClient("http://localhost:8090", null, null);
 
@@ -31,8 +30,6 @@ function Validators() {
 
 //DataTable
 function Validatortable(value) {
-  let vr = new ValidatorResponse();
-
   const columns = [
     { label: "Public Key", name: "publickey" },
     { label: "Number", name: "number" },
@@ -52,8 +49,9 @@ function Validatortable(value) {
   });
 
   const options = {
-    filterType: "checkbox",
-    responsive: "",
+    caseSensitive: true,
+    responsive: "standard",
+    selectableRows: "none",
   };
 
   return (

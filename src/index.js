@@ -2,6 +2,12 @@ require('file-loader?name=[name].[ext]!./index.html')
 import React from 'react';
 import ReactDom from 'react-dom';
 import App from './App'
-
+import { BrowserRouter } from 'react-router-dom';
 const appElement = document.getElementById('app');
-ReactDom.render(<App/>,appElement);
+ReactDom.render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>,
+
+    appElement);
+

@@ -3,34 +3,33 @@ import ReactDom from "react-dom";
 import { Navbar, Nav } from "react-bootstrap";
 import bootstrap from "bootstrap";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 import { Validators } from "../components/validator_component";
 import { BlockchainInfo } from "../components/block_component";
+import { NetworkInfo } from "../components/network_component";
+import { LinkContainer } from "react-router-bootstrap";
+
 function Navigation() {
   return (
-    <Router>
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">Zarb Explorer</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            {/* <Nav.Link href="/">Home</Nav.Link> */}
-            <Nav.Link href="/BlockchainInfo">Blocks</Nav.Link>
-            <Nav.Link href="/Validators">Validators</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-      <Switch>
-        {/* <Route exact path="/">
-          <Home /> */}
-        {/* </Route> */}
-        <Route path="/BlockchainInfo">
-          <BlockchainInfo />
-        </Route>
-        <Route path="/Validators">
-          <Validators />
-        </Route>
-      </Switch>
-    </Router>
+    <Navbar bg="light" expand="lg">
+      <LinkContainer to="/">
+        <Navbar.Brand>ZARB Explorer</Navbar.Brand>
+      </LinkContainer>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          <LinkContainer to="/Validators">
+            <Nav.Link>Validators</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/BlockchainInfo">
+            <Nav.Link>Blockchain</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/NetworkInfo">
+            <Nav.Link>Network</Nav.Link>
+          </LinkContainer>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
 
