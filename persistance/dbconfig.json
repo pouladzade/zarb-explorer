@@ -1,0 +1,11 @@
+{
+  "persistence": "postgreSQL",
+  "platforms": ["Zarb"],
+  "postgreSQL": {
+    "host": "127.0.0.1",
+    "port": "5432",
+    "database": "ZarbExplorer",
+    "username": "zarb",
+    "passwd": "1234"
+  }
+}

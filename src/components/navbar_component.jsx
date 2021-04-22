@@ -3,10 +3,11 @@ import ReactDom from "react-dom";
 import { Navbar, Nav } from "react-bootstrap";
 import bootstrap from "bootstrap";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
-import { Validators } from "../components/validator_component";
-import { BlockchainInfo } from "../components/block_component";
-import { NetworkInfo } from "../components/network_component";
+import {
+  GetValidators,
+  GetNetworkInfo,
+  GetBlockchainInfo,
+} from "../proxy/proxy";
 import { LinkContainer } from "react-router-bootstrap";
 
 function Navigation() {
@@ -18,13 +19,11 @@ function Navigation() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <LinkContainer to="/Validators">
+          <LinkContainer to="/proxy.GetValidators">
             <Nav.Link>Validators</Nav.Link>
           </LinkContainer>
-          <LinkContainer to="/BlockchainInfo">
-            <Nav.Link>Blockchain</Nav.Link>
-          </LinkContainer>
-          <LinkContainer to="/NetworkInfo">
+
+          <LinkContainer to="/proxy.GetNetworkInfo">
             <Nav.Link>Network</Nav.Link>
           </LinkContainer>
         </Nav>

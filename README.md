@@ -1,13 +1,27 @@
-# zarb-explorer
+# zarb-explorer :
 
-Zarb explorer which is build using React js. It is used to dispay the transactions details,block details getting from the zarb blocchain. Still in development phase.
+Zarb explorer which is build using react js with webpack. It fetch the data from zarb blockchain to dispay the transactions details,block details and network details. Still in development phase.
 
-### Steps to run zarb-explorer
+### Prerequisite : Required tools and packages to run the project.
 
-`docker run -d -v "$(pwd)"/envoy/envoy.yaml:/etc/envoy/envoy.yaml:ro -p 8090:8090 -p 9901:9901 envoyproxy/envoy:v1.16.2`
+- [Node js](https://nodejs.org/en/)
 
-`npm install`
+- [npm](https://docs.npmjs.com/cli/v7/commands/npm-install)
 
-`npm start`
+- [Docker](https://www.docker.com/)
 
-Make sure you have docker installed.Envoy acts a proxy between grpc client and server.
+### Run zarb-explorer :
+
+```bash
+bash ./network.sh
+```
+
+Note : npm will serve http://localhost:9000/. We use envoy, which acts a proxy between grpc client and server.
+
+## Contribution
+
+Any ideas are welcome. Feel free to submit any issues or pull requests and can join our discord channel [Discord](https://discord.gg/zPqWqV85ch).
+
+## License
+
+The Zarb blockchain is under MIT license.
