@@ -1,4 +1,4 @@
-require('file-loader?name=[name].[ext]!./index.html')
+// require('file-loader?name=[name].[ext]!../public/index.html')
 import React from 'react';
 import ReactDom from 'react-dom';
 import App from './App'

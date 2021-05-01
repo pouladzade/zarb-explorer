@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ReactDom from "react-dom";
 import MUIDataTable from "mui-datatables";
-import { ZarbClient } from "../../proto/zarb_grpc_web_pb";
-import { NetworkInfoRequest } from "../../proto/zarb_pb.js";
+import { ZarbClient } from "../proto/zarb_grpc_web_pb";
+import { NetworkInfoRequest } from "../proto/zarb_pb.js";
 
 const client = new ZarbClient("http://localhost:8090", null, null);
 
@@ -15,7 +15,6 @@ function NetworkInfo() {
         console.log("the value in pong", err);
       } else {
         let result = response.toObject();
-        console.log(result);
         setPost(result.peersList);
       }
     });
@@ -31,6 +30,7 @@ function NetworkInfo() {
 
 //DataTable
 function NetworkInfotable(value) {
+  console.log(value);
   const columns = [
     { label: "Peer Id", name: "peer id" },
     { label: "Moniker", name: "moniker" },

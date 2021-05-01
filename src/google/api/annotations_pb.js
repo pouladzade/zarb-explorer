@@ -15,7 +15,7 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-var google_api_http_pb = require('../../google/api/http_pb.js');
+var google_api_http_pb = require('../api/http_pb');
 goog.object.extend(proto, google_api_http_pb);
 var google_protobuf_descriptor_pb = require('google-protobuf/google/protobuf/descriptor_pb.js');
 goog.object.extend(proto, google_protobuf_descriptor_pb);
@@ -28,10 +28,10 @@ goog.exportSymbol('proto.google.api.http', null, global);
  */
 proto.google.api.http = new jspb.ExtensionFieldInfo(
     72295728,
-    {http: 0},
+    { http: 0 },
     google_api_http_pb.HttpRule,
-     /** @type {?function((boolean|undefined),!jspb.Message=): !Object} */ (
-         google_api_http_pb.HttpRule.toObject),
+     /** @type {?function((boolean|undefined),!jspb.Message=): !Object} */(
+        google_api_http_pb.HttpRule.toObject),
     0);
 
 google_protobuf_descriptor_pb.MethodOptions.extensionsBinary[72295728] = new jspb.ExtensionFieldBinaryInfo(

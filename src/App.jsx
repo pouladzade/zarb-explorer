@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import ReactDom from "react-dom";
 import Navigation from "./components/navbar_component";
-import { GetValidators, GetNetworkInfo } from "../src/proxy/proxy";
+import {
+  GetValidators,
+  GetNetworkInfo,
+  GetBlockInfo,
+} from "../src/proxy/proxy";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 export default function App() {
@@ -18,6 +22,14 @@ export default function App() {
               <Route
                 path="/proxy.GetValidators"
                 component={GetValidators}
+              ></Route>
+            </Switch>
+          </div>
+          <div className="col-md-12">
+            <Switch>
+              <Route
+                path="/proxy.GetBlockInfo"
+                component={GetBlockInfo}
               ></Route>
             </Switch>
           </div>

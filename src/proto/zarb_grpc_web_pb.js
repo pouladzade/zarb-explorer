@@ -31,21 +31,21 @@ proto.zarb = require('./zarb_pb.js');
  * @final
  */
 proto.zarb.ZarbClient =
-    function(hostname, credentials, options) {
-  if (!options) options = {};
-  options['format'] = 'text';
+  function (hostname, credentials, options) {
+    if (!options) options = {};
+    options['format'] = 'text';
 
-  /**
-   * @private @const {!grpc.web.GrpcWebClientBase} The client
-   */
-  this.client_ = new grpc.web.GrpcWebClientBase(options);
+    /**
+     * @private @const {!grpc.web.GrpcWebClientBase} The client
+     */
+    this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-  /**
-   * @private @const {string} The hostname
-   */
-  this.hostname_ = hostname;
+    /**
+     * @private @const {string} The hostname
+     */
+    this.hostname_ = hostname;
 
-};
+  };
 
 
 /**
@@ -57,21 +57,21 @@ proto.zarb.ZarbClient =
  * @final
  */
 proto.zarb.ZarbPromiseClient =
-    function(hostname, credentials, options) {
-  if (!options) options = {};
-  options['format'] = 'text';
+  function (hostname, credentials, options) {
+    if (!options) options = {};
+    options['format'] = 'text';
 
-  /**
-   * @private @const {!grpc.web.GrpcWebClientBase} The client
-   */
-  this.client_ = new grpc.web.GrpcWebClientBase(options);
+    /**
+     * @private @const {!grpc.web.GrpcWebClientBase} The client
+     */
+    this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-  /**
-   * @private @const {string} The hostname
-   */
-  this.hostname_ = hostname;
+    /**
+     * @private @const {string} The hostname
+     */
+    this.hostname_ = hostname;
 
-};
+  };
 
 
 /**
@@ -89,7 +89,7 @@ const methodDescriptor_Zarb_GetBlock = new grpc.web.MethodDescriptor(
    * @param {!proto.zarb.BlockRequest} request
    * @return {!Uint8Array}
    */
-  function(request) {
+  function (request) {
     return request.serializeBinary();
   },
   proto.zarb.BlockResponse.deserializeBinary
@@ -108,7 +108,7 @@ const methodInfo_Zarb_GetBlock = new grpc.web.AbstractClientBase.MethodInfo(
    * @param {!proto.zarb.BlockRequest} request
    * @return {!Uint8Array}
    */
-  function(request) {
+  function (request) {
     return request.serializeBinary();
   },
   proto.zarb.BlockResponse.deserializeBinary
@@ -126,14 +126,14 @@ const methodInfo_Zarb_GetBlock = new grpc.web.AbstractClientBase.MethodInfo(
  *     The XHR Node Readable Stream
  */
 proto.zarb.ZarbClient.prototype.getBlock =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
+  function (request, metadata, callback) {
+    return this.client_.rpcCall(this.hostname_ +
       '/zarb.Zarb/GetBlock',
       request,
       metadata || {},
       methodDescriptor_Zarb_GetBlock,
       callback);
-};
+  };
 
 
 /**
@@ -145,13 +145,13 @@ proto.zarb.ZarbClient.prototype.getBlock =
  *     Promise that resolves to the response
  */
 proto.zarb.ZarbPromiseClient.prototype.getBlock =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
+  function (request, metadata) {
+    return this.client_.unaryCall(this.hostname_ +
       '/zarb.Zarb/GetBlock',
       request,
       metadata || {},
       methodDescriptor_Zarb_GetBlock);
-};
+  };
 
 
 /**
@@ -169,7 +169,7 @@ const methodDescriptor_Zarb_GetBlockHeight = new grpc.web.MethodDescriptor(
    * @param {!proto.zarb.BlockHeightRequest} request
    * @return {!Uint8Array}
    */
-  function(request) {
+  function (request) {
     return request.serializeBinary();
   },
   proto.zarb.BlockHeightResponse.deserializeBinary
@@ -188,7 +188,7 @@ const methodInfo_Zarb_GetBlockHeight = new grpc.web.AbstractClientBase.MethodInf
    * @param {!proto.zarb.BlockHeightRequest} request
    * @return {!Uint8Array}
    */
-  function(request) {
+  function (request) {
     return request.serializeBinary();
   },
   proto.zarb.BlockHeightResponse.deserializeBinary
@@ -206,14 +206,14 @@ const methodInfo_Zarb_GetBlockHeight = new grpc.web.AbstractClientBase.MethodInf
  *     The XHR Node Readable Stream
  */
 proto.zarb.ZarbClient.prototype.getBlockHeight =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
+  function (request, metadata, callback) {
+    return this.client_.rpcCall(this.hostname_ +
       '/zarb.Zarb/GetBlockHeight',
       request,
       metadata || {},
       methodDescriptor_Zarb_GetBlockHeight,
       callback);
-};
+  };
 
 
 /**
@@ -225,13 +225,13 @@ proto.zarb.ZarbClient.prototype.getBlockHeight =
  *     Promise that resolves to the response
  */
 proto.zarb.ZarbPromiseClient.prototype.getBlockHeight =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
+  function (request, metadata) {
+    return this.client_.unaryCall(this.hostname_ +
       '/zarb.Zarb/GetBlockHeight',
       request,
       metadata || {},
       methodDescriptor_Zarb_GetBlockHeight);
-};
+  };
 
 
 /**
@@ -249,7 +249,7 @@ const methodDescriptor_Zarb_GetTransaction = new grpc.web.MethodDescriptor(
    * @param {!proto.zarb.TransactionRequest} request
    * @return {!Uint8Array}
    */
-  function(request) {
+  function (request) {
     return request.serializeBinary();
   },
   proto.zarb.TransactionResponse.deserializeBinary
@@ -268,7 +268,7 @@ const methodInfo_Zarb_GetTransaction = new grpc.web.AbstractClientBase.MethodInf
    * @param {!proto.zarb.TransactionRequest} request
    * @return {!Uint8Array}
    */
-  function(request) {
+  function (request) {
     return request.serializeBinary();
   },
   proto.zarb.TransactionResponse.deserializeBinary
@@ -286,14 +286,14 @@ const methodInfo_Zarb_GetTransaction = new grpc.web.AbstractClientBase.MethodInf
  *     The XHR Node Readable Stream
  */
 proto.zarb.ZarbClient.prototype.getTransaction =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
+  function (request, metadata, callback) {
+    return this.client_.rpcCall(this.hostname_ +
       '/zarb.Zarb/GetTransaction',
       request,
       metadata || {},
       methodDescriptor_Zarb_GetTransaction,
       callback);
-};
+  };
 
 
 /**
@@ -305,13 +305,13 @@ proto.zarb.ZarbClient.prototype.getTransaction =
  *     Promise that resolves to the response
  */
 proto.zarb.ZarbPromiseClient.prototype.getTransaction =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
+  function (request, metadata) {
+    return this.client_.unaryCall(this.hostname_ +
       '/zarb.Zarb/GetTransaction',
       request,
       metadata || {},
       methodDescriptor_Zarb_GetTransaction);
-};
+  };
 
 
 /**
@@ -329,7 +329,7 @@ const methodDescriptor_Zarb_GetAccount = new grpc.web.MethodDescriptor(
    * @param {!proto.zarb.AccountRequest} request
    * @return {!Uint8Array}
    */
-  function(request) {
+  function (request) {
     return request.serializeBinary();
   },
   proto.zarb.AccountResponse.deserializeBinary
@@ -348,7 +348,7 @@ const methodInfo_Zarb_GetAccount = new grpc.web.AbstractClientBase.MethodInfo(
    * @param {!proto.zarb.AccountRequest} request
    * @return {!Uint8Array}
    */
-  function(request) {
+  function (request) {
     return request.serializeBinary();
   },
   proto.zarb.AccountResponse.deserializeBinary
@@ -366,14 +366,14 @@ const methodInfo_Zarb_GetAccount = new grpc.web.AbstractClientBase.MethodInfo(
  *     The XHR Node Readable Stream
  */
 proto.zarb.ZarbClient.prototype.getAccount =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
+  function (request, metadata, callback) {
+    return this.client_.rpcCall(this.hostname_ +
       '/zarb.Zarb/GetAccount',
       request,
       metadata || {},
       methodDescriptor_Zarb_GetAccount,
       callback);
-};
+  };
 
 
 /**
@@ -385,13 +385,13 @@ proto.zarb.ZarbClient.prototype.getAccount =
  *     Promise that resolves to the response
  */
 proto.zarb.ZarbPromiseClient.prototype.getAccount =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
+  function (request, metadata) {
+    return this.client_.unaryCall(this.hostname_ +
       '/zarb.Zarb/GetAccount',
       request,
       metadata || {},
       methodDescriptor_Zarb_GetAccount);
-};
+  };
 
 
 /**
@@ -409,7 +409,7 @@ const methodDescriptor_Zarb_GetValidators = new grpc.web.MethodDescriptor(
    * @param {!proto.zarb.ValidatorsRequest} request
    * @return {!Uint8Array}
    */
-  function(request) {
+  function (request) {
     return request.serializeBinary();
   },
   proto.zarb.ValidatorsResponse.deserializeBinary
@@ -428,7 +428,7 @@ const methodInfo_Zarb_GetValidators = new grpc.web.AbstractClientBase.MethodInfo
    * @param {!proto.zarb.ValidatorsRequest} request
    * @return {!Uint8Array}
    */
-  function(request) {
+  function (request) {
     return request.serializeBinary();
   },
   proto.zarb.ValidatorsResponse.deserializeBinary
@@ -446,14 +446,14 @@ const methodInfo_Zarb_GetValidators = new grpc.web.AbstractClientBase.MethodInfo
  *     The XHR Node Readable Stream
  */
 proto.zarb.ZarbClient.prototype.getValidators =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
+  function (request, metadata, callback) {
+    return this.client_.rpcCall(this.hostname_ +
       '/zarb.Zarb/GetValidators',
       request,
       metadata || {},
       methodDescriptor_Zarb_GetValidators,
       callback);
-};
+  };
 
 
 /**
@@ -465,13 +465,13 @@ proto.zarb.ZarbClient.prototype.getValidators =
  *     Promise that resolves to the response
  */
 proto.zarb.ZarbPromiseClient.prototype.getValidators =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
+  function (request, metadata) {
+    return this.client_.unaryCall(this.hostname_ +
       '/zarb.Zarb/GetValidators',
       request,
       metadata || {},
       methodDescriptor_Zarb_GetValidators);
-};
+  };
 
 
 /**
@@ -489,7 +489,7 @@ const methodDescriptor_Zarb_GetValidator = new grpc.web.MethodDescriptor(
    * @param {!proto.zarb.ValidatorRequest} request
    * @return {!Uint8Array}
    */
-  function(request) {
+  function (request) {
     return request.serializeBinary();
   },
   proto.zarb.ValidatorResponse.deserializeBinary
@@ -508,7 +508,7 @@ const methodInfo_Zarb_GetValidator = new grpc.web.AbstractClientBase.MethodInfo(
    * @param {!proto.zarb.ValidatorRequest} request
    * @return {!Uint8Array}
    */
-  function(request) {
+  function (request) {
     return request.serializeBinary();
   },
   proto.zarb.ValidatorResponse.deserializeBinary
@@ -526,14 +526,14 @@ const methodInfo_Zarb_GetValidator = new grpc.web.AbstractClientBase.MethodInfo(
  *     The XHR Node Readable Stream
  */
 proto.zarb.ZarbClient.prototype.getValidator =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
+  function (request, metadata, callback) {
+    return this.client_.rpcCall(this.hostname_ +
       '/zarb.Zarb/GetValidator',
       request,
       metadata || {},
       methodDescriptor_Zarb_GetValidator,
       callback);
-};
+  };
 
 
 /**
@@ -545,13 +545,13 @@ proto.zarb.ZarbClient.prototype.getValidator =
  *     Promise that resolves to the response
  */
 proto.zarb.ZarbPromiseClient.prototype.getValidator =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
+  function (request, metadata) {
+    return this.client_.unaryCall(this.hostname_ +
       '/zarb.Zarb/GetValidator',
       request,
       metadata || {},
       methodDescriptor_Zarb_GetValidator);
-};
+  };
 
 
 /**
@@ -569,7 +569,7 @@ const methodDescriptor_Zarb_GetValidatorByNumber = new grpc.web.MethodDescriptor
    * @param {!proto.zarb.ValidatorByNumberRequest} request
    * @return {!Uint8Array}
    */
-  function(request) {
+  function (request) {
     return request.serializeBinary();
   },
   proto.zarb.ValidatorResponse.deserializeBinary
@@ -588,7 +588,7 @@ const methodInfo_Zarb_GetValidatorByNumber = new grpc.web.AbstractClientBase.Met
    * @param {!proto.zarb.ValidatorByNumberRequest} request
    * @return {!Uint8Array}
    */
-  function(request) {
+  function (request) {
     return request.serializeBinary();
   },
   proto.zarb.ValidatorResponse.deserializeBinary
@@ -606,14 +606,14 @@ const methodInfo_Zarb_GetValidatorByNumber = new grpc.web.AbstractClientBase.Met
  *     The XHR Node Readable Stream
  */
 proto.zarb.ZarbClient.prototype.getValidatorByNumber =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
+  function (request, metadata, callback) {
+    return this.client_.rpcCall(this.hostname_ +
       '/zarb.Zarb/GetValidatorByNumber',
       request,
       metadata || {},
       methodDescriptor_Zarb_GetValidatorByNumber,
       callback);
-};
+  };
 
 
 /**
@@ -625,13 +625,13 @@ proto.zarb.ZarbClient.prototype.getValidatorByNumber =
  *     Promise that resolves to the response
  */
 proto.zarb.ZarbPromiseClient.prototype.getValidatorByNumber =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
+  function (request, metadata) {
+    return this.client_.unaryCall(this.hostname_ +
       '/zarb.Zarb/GetValidatorByNumber',
       request,
       metadata || {},
       methodDescriptor_Zarb_GetValidatorByNumber);
-};
+  };
 
 
 /**
@@ -649,7 +649,7 @@ const methodDescriptor_Zarb_GetBlockchainInfo = new grpc.web.MethodDescriptor(
    * @param {!proto.zarb.BlockchainInfoRequest} request
    * @return {!Uint8Array}
    */
-  function(request) {
+  function (request) {
     return request.serializeBinary();
   },
   proto.zarb.BlockchainInfoResponse.deserializeBinary
@@ -668,7 +668,7 @@ const methodInfo_Zarb_GetBlockchainInfo = new grpc.web.AbstractClientBase.Method
    * @param {!proto.zarb.BlockchainInfoRequest} request
    * @return {!Uint8Array}
    */
-  function(request) {
+  function (request) {
     return request.serializeBinary();
   },
   proto.zarb.BlockchainInfoResponse.deserializeBinary
@@ -686,14 +686,14 @@ const methodInfo_Zarb_GetBlockchainInfo = new grpc.web.AbstractClientBase.Method
  *     The XHR Node Readable Stream
  */
 proto.zarb.ZarbClient.prototype.getBlockchainInfo =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
+  function (request, metadata, callback) {
+    return this.client_.rpcCall(this.hostname_ +
       '/zarb.Zarb/GetBlockchainInfo',
       request,
       metadata || {},
       methodDescriptor_Zarb_GetBlockchainInfo,
       callback);
-};
+  };
 
 
 /**
@@ -705,13 +705,13 @@ proto.zarb.ZarbClient.prototype.getBlockchainInfo =
  *     Promise that resolves to the response
  */
 proto.zarb.ZarbPromiseClient.prototype.getBlockchainInfo =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
+  function (request, metadata) {
+    return this.client_.unaryCall(this.hostname_ +
       '/zarb.Zarb/GetBlockchainInfo',
       request,
       metadata || {},
       methodDescriptor_Zarb_GetBlockchainInfo);
-};
+  };
 
 
 /**
@@ -729,7 +729,7 @@ const methodDescriptor_Zarb_GetNetworkInfo = new grpc.web.MethodDescriptor(
    * @param {!proto.zarb.NetworkInfoRequest} request
    * @return {!Uint8Array}
    */
-  function(request) {
+  function (request) {
     return request.serializeBinary();
   },
   proto.zarb.NetworkInfoResponse.deserializeBinary
@@ -748,7 +748,7 @@ const methodInfo_Zarb_GetNetworkInfo = new grpc.web.AbstractClientBase.MethodInf
    * @param {!proto.zarb.NetworkInfoRequest} request
    * @return {!Uint8Array}
    */
-  function(request) {
+  function (request) {
     return request.serializeBinary();
   },
   proto.zarb.NetworkInfoResponse.deserializeBinary
@@ -766,14 +766,14 @@ const methodInfo_Zarb_GetNetworkInfo = new grpc.web.AbstractClientBase.MethodInf
  *     The XHR Node Readable Stream
  */
 proto.zarb.ZarbClient.prototype.getNetworkInfo =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
+  function (request, metadata, callback) {
+    return this.client_.rpcCall(this.hostname_ +
       '/zarb.Zarb/GetNetworkInfo',
       request,
       metadata || {},
       methodDescriptor_Zarb_GetNetworkInfo,
       callback);
-};
+  };
 
 
 /**
@@ -785,13 +785,13 @@ proto.zarb.ZarbClient.prototype.getNetworkInfo =
  *     Promise that resolves to the response
  */
 proto.zarb.ZarbPromiseClient.prototype.getNetworkInfo =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
+  function (request, metadata) {
+    return this.client_.unaryCall(this.hostname_ +
       '/zarb.Zarb/GetNetworkInfo',
       request,
       metadata || {},
       methodDescriptor_Zarb_GetNetworkInfo);
-};
+  };
 
 
 /**
@@ -809,7 +809,7 @@ const methodDescriptor_Zarb_SendRawTransaction = new grpc.web.MethodDescriptor(
    * @param {!proto.zarb.SendRawTransactionRequest} request
    * @return {!Uint8Array}
    */
-  function(request) {
+  function (request) {
     return request.serializeBinary();
   },
   proto.zarb.SendRawTransactionResponse.deserializeBinary
@@ -828,7 +828,7 @@ const methodInfo_Zarb_SendRawTransaction = new grpc.web.AbstractClientBase.Metho
    * @param {!proto.zarb.SendRawTransactionRequest} request
    * @return {!Uint8Array}
    */
-  function(request) {
+  function (request) {
     return request.serializeBinary();
   },
   proto.zarb.SendRawTransactionResponse.deserializeBinary
@@ -846,14 +846,14 @@ const methodInfo_Zarb_SendRawTransaction = new grpc.web.AbstractClientBase.Metho
  *     The XHR Node Readable Stream
  */
 proto.zarb.ZarbClient.prototype.sendRawTransaction =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
+  function (request, metadata, callback) {
+    return this.client_.rpcCall(this.hostname_ +
       '/zarb.Zarb/SendRawTransaction',
       request,
       metadata || {},
       methodDescriptor_Zarb_SendRawTransaction,
       callback);
-};
+  };
 
 
 /**
@@ -865,13 +865,13 @@ proto.zarb.ZarbClient.prototype.sendRawTransaction =
  *     Promise that resolves to the response
  */
 proto.zarb.ZarbPromiseClient.prototype.sendRawTransaction =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
+  function (request, metadata) {
+    return this.client_.unaryCall(this.hostname_ +
       '/zarb.Zarb/SendRawTransaction',
       request,
       metadata || {},
       methodDescriptor_Zarb_SendRawTransaction);
-};
+  };
 
 
 module.exports = proto.zarb;

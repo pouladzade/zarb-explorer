@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ReactDom from "react-dom";
 import MUIDataTable from "mui-datatables";
-import { ZarbClient } from "../../proto/zarb_grpc_web_pb";
-import { ValidatorsRequest } from "../../proto/zarb_pb.js";
-
+import { ZarbClient } from "../proto/zarb_grpc_web_pb";
+import { ValidatorsRequest } from "../proto/zarb_pb.js";
 const client = new ZarbClient("http://localhost:8090", null, null);
 
 function Validators() {
@@ -30,21 +29,26 @@ function Validators() {
 
 //DataTable
 function Validatortable(value) {
+  console.log(value);
   const columns = [
-    { label: "Public Key", name: "publickey" },
+    { label: "Address", name: "address" },
     { label: "Number", name: "number" },
     { label: "Sequence", name: "sequence" },
     { label: "Stake", name: "stake" },
     { label: "Height", name: "bondingHeight" },
+    { label: "LastJoinedHeight", name: "lastJoinedHeight" },
+    { label: "Public Key", name: "publickey" },
   ];
 
   const data = value.map((item) => {
     return [
-      item.publicKey,
+      item.address,
       item.number,
       item.sequence,
       item.stake,
       item.bondingHeight,
+      item.lastJoinedHeight,
+      item.publicKey,
     ];
   });
 

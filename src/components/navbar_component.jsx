@@ -22,7 +22,9 @@ function Navigation() {
           <LinkContainer to="/proxy.GetValidators">
             <Nav.Link>Validators</Nav.Link>
           </LinkContainer>
-
+          <LinkContainer to="/proxy.GetBlockInfo">
+            <Nav.Link>BlockInfo</Nav.Link>
+          </LinkContainer>
           <LinkContainer to="/proxy.GetNetworkInfo">
             <Nav.Link>Network</Nav.Link>
           </LinkContainer>

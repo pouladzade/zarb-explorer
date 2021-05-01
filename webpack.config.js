@@ -1,6 +1,12 @@
 
 const path = require('path');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 const webpack = require('webpack');
+
+const htmlPlugin = new HtmlWebPackPlugin({
+  template: "./public/index.html",
+  filename: "./index.html"
+});
 
 module.exports = {
   entry: path.resolve(__dirname, './src/index.js'),
@@ -8,6 +14,7 @@ module.exports = {
     filename: 'index.bundle.js',
     path: path.resolve(__dirname, "/dist"),
   },
+
   module: {
     rules: [
       {
@@ -27,18 +34,18 @@ module.exports = {
         ],
       },
       {
-          test: /\.css$/,
-          use: ['style-loader', 'css-loader']
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       },
-      
-      ],
-     
+    ],
+
   },
+
   resolve: {
     extensions: ['*', '.js', '.jsx'],
   },
 
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [new webpack.HotModuleReplacementPlugin(), htmlPlugin],
   devServer: {
     contentBase: path.resolve(__dirname, './dist'),
     hot: true,
