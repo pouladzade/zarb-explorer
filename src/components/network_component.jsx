@@ -3,8 +3,9 @@ import ReactDom from "react-dom";
 import MUIDataTable from "mui-datatables";
 import { ZarbClient } from "../proto/zarb_grpc_web_pb";
 import { NetworkInfoRequest } from "../proto/zarb_pb.js";
+import configData from "../config.json";
 
-const client = new ZarbClient("http://localhost:8090", null, null);
+const client = new ZarbClient(configData.SERVER_URL, null, null);
 
 function NetworkInfo() {
   const [post, setPost] = useState([]);

@@ -23,13 +23,13 @@ if [ -d "$DIR" ]; then
   # Take action if $DIR exists. #
   echo "node modules exist in ${DIR}..."
   echo "npm start"
-  npm start
+  npm run deploy
 else
   ###  Control will jump here if $DIR does NOT exists ###
   echo "npm install"
   npm install 
   echo "npm start"
-  npm start
+  npm run deploy
 fi
 
 #  npm install 

@@ -3,7 +3,9 @@ import ReactDom from "react-dom";
 import MUIDataTable from "mui-datatables";
 import { ZarbClient } from "../proto/zarb_grpc_web_pb";
 import { ValidatorsRequest } from "../proto/zarb_pb.js";
-const client = new ZarbClient("http://localhost:8090", null, null);
+import configData from "../config.json";
+
+const client = new ZarbClient(configData.SERVER_URL, null, null);
 
 function Validators() {
   const [post, setPost] = useState([]);
@@ -11,7 +13,7 @@ function Validators() {
     var validatorRequest = new ValidatorsRequest();
     client.getValidators(validatorRequest, null, function (err, response) {
       if (err) {
-        console.log("the value in pong", err);
+        console.log("the validator not exsist:", err);
       } else {
         let result = response.toObject();
         setPost(result.validatorsList);
@@ -29,7 +31,6 @@ function Validators() {
 
 //DataTable
 function Validatortable(value) {
-  console.log(value);
   const columns = [
     { label: "Address", name: "address" },
     { label: "Number", name: "number" },
