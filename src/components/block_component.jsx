@@ -16,6 +16,7 @@ const client = new ZarbClient(configData.SERVER_URL, null, null);
 function BlockchainInfo() {
   const [blockResponse, setBlock] = useState([]);
   var bh = new Array();
+  
   //get the height of blockchain
   let height = getBlockHeight();
   const getblock = (value) => {
@@ -76,7 +77,6 @@ function getBlockHeight() {
 
 //DataTable
 function Blockinfo(value) {
-  console.log("the value", value);
   const columns = [
     { label: "Hash", name: "hash" },
     { label: "LastBlockHash", name: "LastBlockHash" },
